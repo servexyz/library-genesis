@@ -1,0 +1,25 @@
+{
+  "name": "library-genesis",
+  "version": "0.5.0",
+  "main": "index.js",
+  "repository": "https://github.com/servexyz/library-genesis",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^22.0.4"
+  },
+  "jest": {
+    "verbose": true,
+    "bail": false,
+    "collectCoverage": false,
+    "modulePathIgnorePatterns": [
+      "sandbox",
+      "node_modules"
+    ]
+  },
+  "dependencies": {
+    "chalk": "^2.3.0"
+  }
+}
