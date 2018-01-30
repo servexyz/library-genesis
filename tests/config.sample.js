@@ -1,7 +1,4 @@
-const { iterate } = require("../index.js");
-const log = console.log;
-
-const rawConfig = {
+let config = {
   directory: [
     { "fileA.ext": { t: "/path/to/template.js", v: { Foo: "Bar" } } },
     { "fileB.ext": { c: "Foobar" } },
@@ -16,8 +13,4 @@ const rawConfig = {
   ]
 };
 
-test("config contains config", () => {
-  const config = require("./config.sample.js");
-  let lib = iterate(config);
-  expect(config).toBe(rawConfig);
-});
+module.exports = { config };

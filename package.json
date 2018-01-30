@@ -14,10 +14,7 @@
     "verbose": true,
     "bail": false,
     "collectCoverage": false,
-    "modulePathIgnorePatterns": [
-      "sandbox",
-      "node_modules"
-    ]
+    "modulePathIgnorePatterns": ["node_modules", "api.test.js"]
   },
   "dependencies": {
     "chalk": "^2.3.0"

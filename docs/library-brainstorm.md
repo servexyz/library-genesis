@@ -9,10 +9,10 @@
     * [Dependencies](#dependencies)
     * [Config File](#config-file)
     * [Questions](#questions)
-      * [[Topology](#topology) & [Structure](#structure)](#topologytopology--structurestructure)
-      * [[Type](#types)](#typetypes)
-      * [[Templates](#templates)](#templatestemplates)
-      * [[Config files](#config-files)](#config-filesconfig-files)
+      * [Topology](#topology) & [Structure](#structure)
+      * [Type](#types)
+      * [Templates](#templates)
+      * [Config files](#config-files)
     * [Config Files](#config-files)
       * [Copying](#copying)
       * [Creating](#creating)
@@ -167,10 +167,10 @@ let libray = {
 
 ##### Types
 
-| Name      | Type   | Attributes                                    |
-| :-------- | :----- | :-------------------------------------------- |
-| file      | object | `filename.extension`, nested                  |
-| directory | array  | `directoryname`, parent of other files & dirs |
+| Name      | Type   | Attributes                             |
+| :-------- | :----- | :------------------------------------- |
+| file      | object | `filename.extension`, nested           |
+| directory | array  | `directoryname`, contains files & dirs |
 
 **Flags**
 
@@ -184,3 +184,5 @@ let libray = {
 ### Templates
 
 ---
+
+Templates currently exist in limbo between library-genesis and file-genesis
