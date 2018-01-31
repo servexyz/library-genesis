@@ -16,10 +16,12 @@ test("config contains config", () => {
     ]
   };
 
-  const { config } = require("./config.sample.js");
-  expect(config).toEqual(rawConfig);
+  const { conA } = require("./config.sample.js");
+  expect(conA).toEqual(rawConfig);
 });
 
 test("config is iterated through", () => {
-  const { iterate } = require("../index.js");
+  const { iterate } = require("../src/library.js");
+  const { conD } = require("./config.sample.js");
+  iterate(conD);
 });
