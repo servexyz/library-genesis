@@ -28,6 +28,11 @@ var Library = config => {
         )} \n `
       );
       log(`${chalk.bold("Entries")}: \n ${chalk.green(entries)} \n `);
+    },
+    parse: () => {
+      config.map((o, i) => {
+        log(`${i} : ${o}`);
+      });
     }
   };
 };

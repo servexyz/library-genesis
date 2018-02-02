@@ -1,4 +1,5 @@
 const log = console.log;
+const { conA, conD } = require("./config.sample.js");
 
 test("Config structure is accurate", () => {
   const rawConfig = {
@@ -16,13 +17,16 @@ test("Config structure is accurate", () => {
     ]
   };
   //TODO: Update to conD
-  const { conA } = require("./config.sample.js");
   expect(conA).toEqual(rawConfig);
 });
 
 test("Print config", () => {
   const { Library } = require("../src/library-reduce.js");
-  const { conD } = require("./config.sample.js");
   log(conD);
   Library(conD).printConfig();
+});
+
+test("Parse config", () => {
+  const { Library } = require("../src/library-reduce.js");
+  Library(conD).parse();
 });
