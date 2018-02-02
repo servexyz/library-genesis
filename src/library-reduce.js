@@ -15,13 +15,17 @@ Brainstorm
 ===============================================
 */
 
-let Library = config => {
-  config.reduce();
-};
-const iterate = (all, current) => {
-  log(`All: ${all}`);
-  log(`Current: ${current}`);
-  return (all += current);
+var Library = config => {
+  return {
+    printEverything: () => {
+      let keys = Object.keys(config);
+      let values = Object.values(config);
+      let entries = Object.entries(config);
+      log(`keys: ${chalk.blue(keys)} \n `);
+      log(`values: ${chalk.blue(JSON.stringify(values, null, 2))} \n `);
+      log(`entries: ${chalk.blue(entries)} \n `);
+    }
+  };
 };
 
 module.exports = {

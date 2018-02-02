@@ -24,6 +24,6 @@ test("config is iterated through", () => {
   // const { Library } = require("../src/library.js");
   const { Library } = require("../src/library-reduce.js");
   const { conD } = require("./config.sample.js");
-  let l = new Library();
-  l.generate(conD);
+  // let l = new Library();
+  Library(conD).printEverything();
 });
