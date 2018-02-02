@@ -30,14 +30,26 @@ var Library = config => {
       log(`${chalk.bold("Entries")}: \n ${chalk.green(entries)} \n `);
     },
     parse: () => {
-      config
-        .map((o, i) => o)
-        .filter(o => {
-          let k = Object.keys(o)[0];
-          log(`k: ${k} type: ${typeof k}`);
-          return k.indexOf(".") > -1;
-        })
-        .forEach(k => log(`file: ${JSON.stringify(k)}`));
+      let localConfig = Object.assign({}, config);
+      log(localConfig);
+      let directories = {};
+      //reduce, ( generate(//log) && splice ) || object assign, splice, recurse
+      for (let [key, val] of Object.entries(localConfig)) {
+        key.indexOf(".") > -1
+          ? log(`File: ${key}`)
+          : Object.assign(directories, key, val);
+        //need to do double assign here... first key: val, then direct
+      }
+      //i think there's a cleaner way to do this
+      //need to log and use splice to take off files
+      // localConfig
+      //   .map((o, i) => o)
+      //   .filter(o => {
+      //     let k = Object.keys(o)[0];
+      //     log(`k: ${k} type: ${typeof k}`);
+      //     return k.indexOf(".") > -1;
+      //   })
+      //   .forEach(k => log(`file: ${JSON.stringify(k)}`));
     }
   };
 };

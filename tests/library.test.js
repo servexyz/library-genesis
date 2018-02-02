@@ -63,7 +63,7 @@ test("Config structure is accurate", () => {
 
 test("Print config", () => {
   const { Library } = require("../src/library-reduce.js");
-  log(conD);
+  // log(conD);
   Library(conD).printConfig();
 });
 
