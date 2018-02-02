@@ -1,6 +1,6 @@
 const log = console.log;
 
-test("config contains config", () => {
+test("Config structure is accurate", () => {
   const rawConfig = {
     directory: [
       { "fileA.ext": { t: "/path/to/template.js", v: { Foo: "Bar" } } },
@@ -15,15 +15,14 @@ test("config contains config", () => {
       }
     ]
   };
-
+  //TODO: Update to conD
   const { conA } = require("./config.sample.js");
   expect(conA).toEqual(rawConfig);
 });
 
-test("config is iterated through", () => {
-  // const { Library } = require("../src/library.js");
+test("Print config", () => {
   const { Library } = require("../src/library-reduce.js");
   const { conD } = require("./config.sample.js");
-  // let l = new Library();
-  Library(conD).printEverything();
+  log(conD);
+  Library(conD).printConfig();
 });

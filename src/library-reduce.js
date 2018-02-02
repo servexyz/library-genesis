@@ -17,13 +17,17 @@ Brainstorm
 
 var Library = config => {
   return {
-    printEverything: () => {
+    printConfig: () => {
       let keys = Object.keys(config);
       let values = Object.values(config);
       let entries = Object.entries(config);
-      log(`keys: ${chalk.blue(keys)} \n `);
-      log(`values: ${chalk.blue(JSON.stringify(values, null, 2))} \n `);
-      log(`entries: ${chalk.blue(entries)} \n `);
+      log(`${chalk.bold("Keys")}: \n ${chalk.yellow(keys)} \n `);
+      log(
+        `${chalk.bold("Values")}: \n ${chalk.blue(
+          JSON.stringify(values, null, 2)
+        )} \n `
+      );
+      log(`${chalk.bold("Entries")}: \n ${chalk.green(entries)} \n `);
     }
   };
 };
