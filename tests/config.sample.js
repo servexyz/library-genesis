@@ -61,18 +61,36 @@ const config_c = {
   ]
 };
 
-config_d = {
-  foo: {
-    "fileA.ext": { t: "/path/to/template.js", v: { Foo: "Bar" } },
-    "fileB.ext": { c: "Foobar" },
-    "fileC.ext": { s: "/path/to/file/to/symlink" },
-    bar: {
-      "fileD.ext": { c: "Foobar" },
-      "fileE.ext": { c: "Foobar" },
-      "fileF.ext": { c: "Foobar" }
-    }
+config_d = [
+  {
+    foo: [
+      { "fileA.ext": { t: "/path/to/template.js", v: { Foo: "Bar" } } },
+      { "fileB.ext": { c: "Foobar" } },
+      { "fileC.ext": { s: "/path/to/file/to/symlink" } },
+      {
+        bar: [
+          { "fileD.ext": { c: "Foobar" } },
+          { "fileE.ext": { c: "Foobar" } },
+          { "fileF.ext": { c: "Foobar" } }
+        ]
+      }
+    ]
+  },
+  {
+    baz: [
+      { "fileA.ext": { t: "/path/to/template.js", v: { Foo: "Bar" } } },
+      { "fileB.ext": { c: "Foobar" } },
+      { "fileC.ext": { s: "/path/to/file/to/symlink" } },
+      {
+        bax: [
+          { "fileD.ext": { c: "Foobar" } },
+          { "fileE.ext": { c: "Foobar" } },
+          { "fileF.ext": { c: "Foobar" } }
+        ]
+      }
+    ]
   }
-};
+];
 
 /*
   1. Files contain objects

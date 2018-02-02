@@ -21,7 +21,9 @@ test("config contains config", () => {
 });
 
 test("config is iterated through", () => {
-  const { iterate } = require("../src/library.js");
+  // const { Library } = require("../src/library.js");
+  const { Library } = require("../src/library-reduce.js");
   const { conD } = require("./config.sample.js");
-  iterate(conD);
+  let l = new Library();
+  l.generate(conD);
 });
