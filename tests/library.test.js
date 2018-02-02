@@ -1,23 +1,64 @@
 const log = console.log;
 const { conA, conD } = require("./config.sample.js");
 
-test("Config structure is accurate", () => {
-  const rawConfig = {
-    directory: [
+//////////////////////////////////////////
+// Config copies
+//////////////////////////////////////////
+const localizedConA = {
+  directory: [
+    { "fileA.ext": { t: "/path/to/template.js", v: { Foo: "Bar" } } },
+    { "fileB.ext": { c: "Foobar" } },
+    { "fileC.ext": { s: "/path/to/file/to/symlink" } },
+    {
+      directory: [
+        { "fileD.ext": { c: "Foobar" } },
+        { "fileE.ext": { c: "Foobar" } },
+        { "fileF.ext": { c: "Foobar" } }
+      ]
+    }
+  ]
+};
+
+const localizedConD = [
+  {
+    foo: [
       { "fileA.ext": { t: "/path/to/template.js", v: { Foo: "Bar" } } },
       { "fileB.ext": { c: "Foobar" } },
       { "fileC.ext": { s: "/path/to/file/to/symlink" } },
       {
-        directory: [
+        bar: [
           { "fileD.ext": { c: "Foobar" } },
           { "fileE.ext": { c: "Foobar" } },
           { "fileF.ext": { c: "Foobar" } }
         ]
       }
     ]
-  };
+  },
+  { "fileABC.ext": { c: "Foobar" } },
+  {
+    baz: [
+      { "fileA.ext": { t: "/path/to/template.js", v: { Foo: "Bar" } } },
+      { "fileB.ext": { c: "Foobar" } },
+      { "fileC.ext": { s: "/path/to/file/to/symlink" } },
+      {
+        bax: [
+          { "fileD.ext": { c: "Foobar" } },
+          { "fileE.ext": { c: "Foobar" } },
+          { "fileF.ext": { c: "Foobar" } }
+        ]
+      }
+    ]
+  },
+  { "fileDEF.ext": { c: "Foobar" } }
+];
+
+//////////////////////////////////////////
+// Tests
+//////////////////////////////////////////
+
+test("Config structure is accurate", () => {
   //TODO: Update to conD
-  expect(conA).toEqual(rawConfig);
+  expect(conD).toEqual(localizedConD);
 });
 
 test("Print config", () => {

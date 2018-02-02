@@ -30,9 +30,14 @@ var Library = config => {
       log(`${chalk.bold("Entries")}: \n ${chalk.green(entries)} \n `);
     },
     parse: () => {
-      config.map((o, i) => {
-        log(`${i} : ${o}`);
-      });
+      config
+        .map((o, i) => o)
+        .filter(o => {
+          let k = Object.keys(o)[0];
+          log(`k: ${k} type: ${typeof k}`);
+          return k.indexOf(".") > -1;
+        })
+        .forEach(k => log(`file: ${JSON.stringify(k)}`));
     }
   };
 };
