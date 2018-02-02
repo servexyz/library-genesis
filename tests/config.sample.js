@@ -76,6 +76,7 @@ config_d = [
       }
     ]
   },
+  { "fileD.ext": { c: "Foobar" } },
   {
     baz: [
       { "fileA.ext": { t: "/path/to/template.js", v: { Foo: "Bar" } } },
