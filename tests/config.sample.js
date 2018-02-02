@@ -76,7 +76,7 @@ config_d = [
       }
     ]
   },
-  { "fileD.ext": { c: "Foobar" } },
+  { "fileABC.ext": { c: "Foobar" } },
   {
     baz: [
       { "fileA.ext": { t: "/path/to/template.js", v: { Foo: "Bar" } } },
@@ -90,7 +90,8 @@ config_d = [
         ]
       }
     ]
-  }
+  },
+  { "fileDEF.ext": { c: "Foobar" } }
 ];
 
 /*
