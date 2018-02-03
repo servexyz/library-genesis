@@ -61,13 +61,18 @@ test("Config structure is accurate", () => {
   expect(conD).toEqual(localizedConD);
 });
 
-test("Print config", () => {
-  const { Library } = require("../src/library-reduce.js");
-  // log(conD);
-  Library(conD).printConfig();
-});
+//This prints as expected, just obnoxious to see everytime
+// test("Print config", () => {
+//   const { Library } = require("../src/library-reduce.js");
+//   // log(conD);
+//   Library(conD).printConfig();
+// });
 
-test("Parse config", () => {
-  const { Library } = require("../src/library-reduce.js");
-  Library(conD).parse();
-});
+test(
+  "Parse config",
+  () => {
+    const { Library } = require("../src/library-reduce.js");
+    Library(conD).parse4();
+  },
+  3000
+);
