@@ -10,38 +10,6 @@ Convert config into library scaffolding
 
 > [sample.config.js](./tests/config.sample.js)
 
-```js
-const config = {
-  directory: {
-    target: "/path/to/fooBar",
-    file: { target: "fileA.ext", type: "plain", content: "Hello, fileA" },
-    directory: {
-      target: "baz",
-      file: {
-        target: "fileB.ext",
-        type: "symlink",
-        source: "/path/to/original"
-      },
-      file: {
-        target: "fileC.ext",
-        type: "template",
-        source: "/path/to/template/file",
-        variables: templateVarC
-      },
-      directory: {
-        target: "bax",
-        file: {
-          target: "fileD.ext",
-          type: "template",
-          source: "/path/to/template/file",
-          variables: { Baz: "Bax" }
-        }
-      }
-    }
-  }
-};
-```
-
 ### Config :: `Keys`
 
 #### Keys :: `Types`
