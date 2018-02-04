@@ -96,7 +96,7 @@ const config_d = {
   ]
 };
 
-let templateVarC = { Foo: "Bar" };
+var templateVarC = { Foo: "Bar" };
 const config_e = {
   root: {
     name: "fooBar",
@@ -112,7 +112,7 @@ const config_e = {
         target: "fileC.ext",
         type: "template",
         source: "/path/to/template/file",
-        variables: templateVarC
+        variables: this.templateVarC
       },
       directory: {
         name: "bax",
@@ -136,5 +136,6 @@ module.exports = {
   conA: config_a,
   conB: config_b,
   conC: config_c,
-  conD: config_d
+  conD: config_d,
+  conE: config_e
 };
