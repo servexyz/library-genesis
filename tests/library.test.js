@@ -19,38 +19,40 @@ const localizedConA = {
   ]
 };
 
-const localizedConD = [
-  {
-    foo: [
-      { "fileA.ext": { t: "/path/to/template.js", v: { Foo: "Bar" } } },
-      { "fileB.ext": { c: "Foobar" } },
-      { "fileC.ext": { s: "/path/to/file/to/symlink" } },
-      {
-        bar: [
-          { "fileD.ext": { c: "Foobar" } },
-          { "fileE.ext": { c: "Foobar" } },
-          { "fileF.ext": { c: "Foobar" } }
-        ]
-      }
-    ]
-  },
-  { "fileABC.ext": { c: "Foobar" } },
-  {
-    baz: [
-      { "fileA.ext": { t: "/path/to/template.js", v: { Foo: "Bar" } } },
-      { "fileB.ext": { c: "Foobar" } },
-      { "fileC.ext": { s: "/path/to/file/to/symlink" } },
-      {
-        bax: [
-          { "fileD.ext": { c: "Foobar" } },
-          { "fileE.ext": { c: "Foobar" } },
-          { "fileF.ext": { c: "Foobar" } }
-        ]
-      }
-    ]
-  },
-  { "fileDEF.ext": { c: "Foobar" } }
-];
+const localizedConD = {
+  root: [
+    {
+      foo: [
+        { "fileA.ext": { t: "/path/to/template.js", v: { Foo: "Bar" } } },
+        { "fileB.ext": { c: "Foobar" } },
+        { "fileC.ext": { s: "/path/to/file/to/symlink" } },
+        {
+          bar: [
+            { "fileD.ext": { c: "Foobar" } },
+            { "fileE.ext": { c: "Foobar" } },
+            { "fileF.ext": { c: "Foobar" } }
+          ]
+        }
+      ]
+    },
+    { "fileABC.ext": { c: "Foobar" } },
+    {
+      baz: [
+        { "fileA.ext": { t: "/path/to/template.js", v: { Foo: "Bar" } } },
+        { "fileB.ext": { c: "Foobar" } },
+        { "fileC.ext": { s: "/path/to/file/to/symlink" } },
+        {
+          bax: [
+            { "fileD.ext": { c: "Foobar" } },
+            { "fileE.ext": { c: "Foobar" } },
+            { "fileF.ext": { c: "Foobar" } }
+          ]
+        }
+      ]
+    },
+    { "fileDEF.ext": { c: "Foobar" } }
+  ]
+};
 
 //////////////////////////////////////////
 // Tests
@@ -72,7 +74,7 @@ test(
   "Parse config",
   () => {
     const { Library } = require("../src/library-reduce.js");
-    Library(conD).parse4();
+    Library(conD).parse5();
   },
   3000
 );

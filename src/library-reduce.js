@@ -128,6 +128,14 @@ var Library = config => {
       log(`configuration ${chalk.magenta(JSON.stringify(configuration))}`);
       log(`configuration length: ${configuration.length}`);
       configuration.length > 0 ? this.parse4(configuration) : log(`completed`);
+    },
+    parse5: function(configuration = config) {
+      let root = Object.entries(configuration);
+      for (let [key, val] of Object.entries(configuration)) {
+        log(`key: ${chalk.yellow(key)} & val: ${chalk.yellow(val)}`);
+      }
+      // let root = Object.keys(configuration);
+      log(JSON.stringify(root, " ", 2));
     }
   };
 };
