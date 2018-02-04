@@ -1,7 +1,7 @@
 var templateVarC = { Foo: "Bar" };
 
 const config = {
-  root: {
+  directory: {
     target: "/path/to/fooBar",
     file: { name: "fileA.ext", type: "plain", content: "Hello, fileA" },
     directory: {
@@ -26,6 +26,11 @@ const config = {
           variables: { Baz: "Bax" }
         }
       }
+    },
+    file: {
+      target: "fileB.ext",
+      type: "symlink",
+      source: "/path/to/original"
     }
   }
 };

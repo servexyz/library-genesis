@@ -12,7 +12,7 @@ Convert config into library scaffolding
 
 ```js
 const config = {
-  root: {
+  directory: {
     target: "/path/to/fooBar",
     file: { target: "fileA.ext", type: "plain", content: "Hello, fileA" },
     directory: {
@@ -48,14 +48,14 @@ const config = {
 
 **Required in config**
 
-* `root`
+* top-level / parent `directory`
   > Special directory. Contains all other files & directories
 
 **Optional in config**
 
-* `file`
+* nested / child `file`
   > Contains a single object of descriptor keys
-* `directory`
+* nested / child `directory`
   > Contains a "target" descriptor key & nested file/directories
 
 #### Keys :: `Descriptors`
@@ -66,8 +66,8 @@ const config = {
 
   > file/directory name
 
-  * root = _"/path/to/root/directory"_
-  * names & directories = _"foobar.ext"_
+  * parent directory = _"/path/to/root/directory"_
+  * children files & directories = _"foobar.ext"_
 
 **Files**
 
