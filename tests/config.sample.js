@@ -112,7 +112,7 @@ const config_e = {
         target: "fileC.ext",
         type: "template",
         source: "/path/to/template/file",
-        variables: this.templateVarC
+        variables: templateVarC
       },
       directory: {
         name: "bax",
