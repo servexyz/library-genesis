@@ -1,63 +1,134 @@
 var templateVarC = { Foo: "Bar" };
 
-const config = [
-  (directory: {
-    target: "/path/to/fooBar",
-    file: { name: "fileA.ext", type: "plain", content: "Hello, fileA" },
-    directory: {
-      name: "baz",
-      file: {
-        target: "fileB.ext",
-        type: "symlink",
-        source: "/path/to/original"
+//Current
+const config_single = [
+  {
+    target: "/path/to/library/directory0",
+    children: [
+      { target: "file0A.ext", type: "plain", content: "Hello, file0A" },
+      { target: "file0B.ext", type: "plain", content: "Hello, file0B" },
+      {
+        target: "directory1",
+        children: [
+          { target: "file1A.ext", type: "plain", content: "Hello, file1A" },
+          { target: "file1B.ext", type: "plain", content: "Hello, file1B" }
+        ]
       },
-      file: {
-        target: "fileC.ext",
-        type: "template",
-        source: "/path/to/template/file",
-        variables: templateVarC
-      },
-      directory: {
-        name: "bax",
-        file: {
-          target: "fileD.ext",
-          type: "template",
-          source: "/path/to/template/file",
-          variables: { Baz: "Bax" }
-        }
+      {
+        target: "directory2",
+        children: [
+          { target: "file2A.ext", type: "plain", content: "Hello, file2A" },
+          { target: "file2B.ext", type: "plain", content: "Hello, file2B" }
+        ]
       }
-    },
-    file: {
-      target: "fileE.ext",
-      type: "symlink",
-      source: "/path/to/original"
-    },
-    directory: {
-      name: "baz",
-      file: {
-        target: "fileF.ext",
-        type: "symlink",
-        source: "/path/to/original"
-      },
-      file: {
-        target: "fileG.ext",
-        type: "template",
-        source: "/path/to/template/file",
-        variables: templateVarC
-      },
-      directory: {
-        name: "bax",
-        file: {
-          target: "fileH.ext",
-          type: "template",
-          source: "/path/to/template/file",
-          variables: { Baz: "Bax" }
-        }
-      }
-    }
-  })
+    ]
+  }
 ];
 
+const config_double = {
+  target: "/path/to/library",
+  children: [
+    {
+      target: "/path/to/library/directory0",
+      children: [
+        { target: "file0A.ext", type: "plain", content: "Hello, file0A" },
+        { target: "file0B.ext", type: "plain", content: "Hello, file0B" },
+        {
+          target: "directory1",
+          children: [
+            { target: "file1A.ext", type: "plain", content: "Hello, file1A" },
+            { target: "file1B.ext", type: "plain", content: "Hello, file1B" }
+          ]
+        },
+        {
+          target: "directory2",
+          children: [
+            { target: "file2A.ext", type: "plain", content: "Hello, file2A" },
+            { target: "file2B.ext", type: "plain", content: "Hello, file2B" }
+          ]
+        }
+      ]
+    },
+    {
+      target: "/path/to/library/directory0",
+      children: [
+        { target: "file0A.ext", type: "plain", content: "Hello, file0A" },
+        { target: "file0B.ext", type: "plain", content: "Hello, file0B" },
+        {
+          target: "directory1",
+          children: [
+            { target: "file1A.ext", type: "plain", content: "Hello, file1A" },
+            { target: "file1B.ext", type: "plain", content: "Hello, file1B" }
+          ]
+        },
+        {
+          target: "directory2",
+          children: [
+            { target: "file2A.ext", type: "plain", content: "Hello, file2A" },
+            { target: "file2B.ext", type: "plain", content: "Hello, file2B" }
+          ]
+        }
+      ]
+    }
+  ]
+};
+const config_double_modified = {
+  directory: "/path/to/library",
+  children: [
+    {
+      directory: "/path/to/library/directory0",
+      children: [
+        { file: "file0A.ext", type: "plain", content: "Hello, file0A" },
+        { file: "file0B.ext", type: "plain", content: "Hello, file0B" },
+        {
+          directory: "directory1",
+          children: [
+            { file: "file1A.ext", type: "plain", content: "Hello, file1A" },
+            { file: "file1B.ext", type: "plain", content: "Hello, file1B" }
+          ]
+        },
+        {
+          directory: "directory2",
+          children: [
+            { file: "file2A.ext", type: "plain", content: "Hello, file2A" },
+            { file: "file2B.ext", type: "plain", content: "Hello, file2B" }
+          ]
+        }
+      ]
+    },
+    {
+      directory: "/path/to/library/directory0",
+      children: [
+        { file: "file0A.ext", type: "plain", content: "Hello, file0A" },
+        { file: "file0B.ext", type: "plain", content: "Hello, file0B" },
+        {
+          directory: "directory1",
+          children: [
+            { file: "file1A.ext", type: "plain", content: "Hello, file1A" },
+            { file: "file1B.ext", type: "plain", content: "Hello, file1B" }
+          ]
+        },
+        {
+          directory: "directory2",
+          children: [
+            { file: "file2A.ext", type: "plain", content: "Hello, file2A" },
+            { file: "file2B.ext", type: "plain", content: "Hello, file2B" }
+          ]
+        }
+      ]
+    }
+  ]
+};
+/*
+==============================================================================
+Thoughts / Questions / Notes
+==============================================================================
+
+1. modified seems to be best bet... 
+
+*/
 module.exports = {
-  con: config
+  con: config_single,
+  con2: config_double,
+  con3: config_double_modified
 };
