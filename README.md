@@ -2,17 +2,15 @@
 
 Convert config into library scaffolding
 
-## Library-Genesis :: `Config`
+---
 
-> Jump to [keys](#keys)
+### Config
 
-### Config :: `Sample`
+---
 
 > [sample.config.js](./tests/config.sample.js)
 
-### Config :: `Keys`
-
-#### Keys :: `Types`
+#### Keys - `Types`
 
 **Required in config**
 
@@ -26,7 +24,7 @@ Convert config into library scaffolding
 * nested / child `directory`
   > Contains a "target" descriptor key & nested file/directories
 
-#### Keys :: `Descriptors`
+#### Keys - `Descriptors`
 
 **Directories & files**
 
@@ -58,3 +56,17 @@ Convert config into library scaffolding
 * `variables` : object
   > Used with "template"
   > See [content-genesis](https://www.npmjs.com/package/content-genesis) for more info on template interpolation
+
+---
+
+### Related
+
+---
+
+* `content-genesis`
+
+  > [@github](https://github.com/servexyz/content-genesis) | [@npm](https://www.npmjs.com/package/content-genesis)
+
+* `file-genesis`
+
+  > [@github](https://github.com/servexyz/file-genesis) | [@npm](https://www.npmjs.com/package/file-genesis)

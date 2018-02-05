@@ -25,9 +25,12 @@ var Library = config => {
 
     parse3: function(children) {
       let c = children;
-      if (Array.isArray(c) && c.length > 0) {
+      log("typeof children", typeof children);
+      log("c is Array?", Array.isArray(c));
+      let cKeys = Object.keys(c);
+      if (cKeys.length > 0) {
         log(`call children`);
-        let dirs = c.reduce((newDirs, node) => {
+        let dirs = Object.keys(c).reduce((newDirs, node) => {
           log(`node: ${JSON.stringify(node, null, 2)}`);
           newDirs[node] = node;
           return newDirs;
@@ -43,6 +46,7 @@ var Library = config => {
       // Recurse through until [ ]
       if (c.hasOwnProperty("library")) {
         log(`Library name: ${c.library}`);
+        log(`typeof c.children: ${chalk.blue(typeof c.children)}`);
         this.parse3(c.children); //kickoff recursion
       } else {
         log(`no library`);

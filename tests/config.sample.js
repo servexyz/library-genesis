@@ -72,6 +72,7 @@ const config_double = {
     }
   ]
 };
+
 const config_double_modified = {
   library: "/path/to/library",
   children: [
