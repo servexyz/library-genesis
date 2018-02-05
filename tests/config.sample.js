@@ -73,7 +73,7 @@ const config_double = {
   ]
 };
 const config_double_modified = {
-  directory: "/path/to/library",
+  library: "/path/to/library",
   children: [
     {
       directory: "/path/to/library/directory0",
@@ -125,6 +125,7 @@ Thoughts / Questions / Notes
 ==============================================================================
 
 1. modified seems to be best bet... 
+2. How do I ensure that they've named the library ? ie. what happ
 
 */
 module.exports = {

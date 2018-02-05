@@ -16,10 +16,37 @@ var Library = config => {
       );
       log(`${chalk.bold("Entries")}: \n ${chalk.green(entries)} \n `);
     },
-    parse2: function(configuration = config) {
+    /*
+      var newObject = Object.keys(myObject).reduce(function(previous, current) {
+        previous[current] = myObject[current] * myObject[current];
+        return previous;
+      }, {});
+    */
+
+    parse3: function(children) {
+      let c = children;
+      if (Array.isArray(c) && c.length > 0) {
+        log(`call children`);
+        let dirs = c.reduce((newDirs, node) => {
+          log(`node: ${JSON.stringify(node, null, 2)}`);
+          newDirs[node] = node;
+          return newDirs;
+        });
+        log(`remaining dirs: \n ${chalk.green(JSON.stringify(dirs, null, 2))}`);
+        this.parse3(dirs);
+      } else {
+        log(`There are no mo' children`);
+      }
+    },
+    parse2: function(c = config) {
       // Start Expect [ { }, { }, ... ]
       // Recurse through until [ ]
-      log(configuration);
+      if (c.hasOwnProperty("library")) {
+        log(`Library name: ${c.library}`);
+        this.parse3(c.children); //kickoff recursion
+      } else {
+        log(`no library`);
+      }
     }
   };
 };
