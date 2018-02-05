@@ -59,6 +59,27 @@ Convert config into library scaffolding
 
 ---
 
+### Docs
+
+---
+
+* [library-brainstorm](./docs/library-brainstorm.md)
+  > Initial thoughts on config & lib generation
+* [todo](./docs/todo.md)
+  > Tasks bundled by release version
+
+---
+
+### Goals
+
+---
+
+* Enable creation of broad-spectrum modules (helper libs, cli's, ui libs, etc.)
+* Address issues presented by boilerplates and toolkits
+* Can still be useful after initial creation of project
+
+---
+
 ### Related
 
 ---

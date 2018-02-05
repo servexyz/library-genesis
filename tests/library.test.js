@@ -11,7 +11,7 @@ test(
   "Parse config",
   () => {
     const { Library } = require("../src/library-reduce.js");
-    Library(con3).parse2();
+    Library(con3).parse();
   },
   3000
 );

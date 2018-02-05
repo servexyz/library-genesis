@@ -74,7 +74,7 @@ const config_double = {
 };
 
 const config_double_modified = {
-  library: "/path/to/library",
+  directory: "/path/to/library",
   children: [
     {
       directory: "/path/to/library/directory0",
@@ -120,6 +120,7 @@ const config_double_modified = {
     }
   ]
 };
+
 /*
 ==============================================================================
 Thoughts / Questions / Notes
