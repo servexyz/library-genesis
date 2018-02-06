@@ -1,8 +1,9 @@
 const log = console.log;
 const chalk = require("chalk");
 const { File } = require("file-genesis");
-
+const path = require("path");
 var Library = config => {
+  let root = config.directory;
   return {
     //TODO: Create getType which returns "directory" or "file"
     printConfig: () => {
@@ -21,9 +22,6 @@ var Library = config => {
       log(`${chalk.bold("Entries")}: \n ${chalk.green(entries)} \n `);
     },
     parse: function() {
-      log(`config: ${JSON.stringify(config, null, 2)}`);
-      let root = config.directory;
-      log(`root: ${root}`);
       config.files.map(f => {
         switch (f.type) {
           case "file":
@@ -35,26 +33,35 @@ var Library = config => {
         }
       });
     },
+    getPath: function(file) {
+      let filepath = path.join(root, file.dest);
+      log(`filepath: ${chalk.blue(filepath)}`);
+      return filepath;
+    },
     genFile: function(file) {
       let f = file;
-      // log(`${chalk.yellow(f.type)}`);
-      // log(`${chalk.blue(f.dest)}`);
-      // log(`${chalk.green(f.content)}`);
-      File(f.dest).plain(f.content);
+      log(`${chalk.yellow(f.type)}`);
+      log(`${chalk.blue(f.dest)}`);
+      log(`${chalk.green(f.content)}`);
+      File(this.getPath(file)).plain(f.content);
     },
     genSymlink: function(file) {
       let f = file;
-      // log(`${chalk.yellow(f.type)}`);
-      // log(`${chalk.blue(f.dest)}`);
-      // log(`${chalk.green(f.content)}`);
-      File(f.dest).symlink(content.original);
+      log(`${chalk.yellow(f.type)}`);
+      log(`${chalk.blue(f.dest)}`);
+      log(`${chalk.green(f.content.original)}`);
+      File(this.getPath(file)).symlink(f.content.original);
     },
     genTemplate: function(file) {
       let f = file;
-      // log(`${chalk.yellow(f.type)}`);
-      // log(`${chalk.blue(f.dest)}`);
-      // log(`${chalk.green(f.content)}`);
-      File(f.dest).template(content.original, content.variables);
+      log(`${chalk.yellow(f.type)}`);
+      log(`${chalk.blue(f.dest)}`);
+      log(`${chalk.green(JSON.stringify(f.content.original, null, 2))}`);
+      log(`${chalk.green(JSON.stringify(f.content.variables, null, 2))}`);
+      File(this.getPath(file)).template(
+        f.content.original,
+        f.content.variables
+      );
     }
   };
 };

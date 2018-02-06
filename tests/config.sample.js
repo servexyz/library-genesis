@@ -1,25 +1,28 @@
+const path = require("path");
 let dirs = {
-  docs: "/path/to/library/docs",
-  tests: "/path/to/library/tests"
+  root: path.join(__dirname, "sandbox"),
+  docs: "docs",
+  tests: "tests",
+  templates: "templates"
 };
 
 let library = {
-  directory: "/path/to/library",
+  directory: dirs.root,
   files: [
-    { type: "file", dest: `${dirs.docs}/README.md`, content: "#README" },
+    { type: "file", dest: `${dirs.root}/README.md`, content: "#README" },
     {
       type: "symlink",
-      dest: `${dirs.docs}/file.ext`,
+      dest: `${dirs.root}/file.ext`,
       content: {
-        original: "/path/to/original/content/file.ext"
+        original: path.join(__dirname, "../README.md")
       }
     },
     {
       type: "template",
-      dest: "/path/to/templates/sample.js",
+      dest: `${dirs.root}/comp.js`,
       content: {
-        original: "/path/to/original/content",
-        variables: { foo: "Bar" }
+        original: `${dirs.root}/templates/sample.template.js`,
+        variables: { component: "Foobar" }
       }
     }
   ]
