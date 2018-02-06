@@ -37,21 +37,24 @@ var Library = config => {
     },
     genFile: function(file) {
       let f = file;
-      log(`${chalk.yellow(f.type)}`);
-      log(`${chalk.blue(f.dest)}`);
-      log(`${chalk.green(f.content)}`);
+      // log(`${chalk.yellow(f.type)}`);
+      // log(`${chalk.blue(f.dest)}`);
+      // log(`${chalk.green(f.content)}`);
+      File(f.dest).plain(f.content);
     },
     genSymlink: function(file) {
       let f = file;
-      log(`${chalk.yellow(f.type)}`);
-      log(`${chalk.blue(f.dest)}`);
-      log(`${chalk.green(f.content)}`);
+      // log(`${chalk.yellow(f.type)}`);
+      // log(`${chalk.blue(f.dest)}`);
+      // log(`${chalk.green(f.content)}`);
+      File(f.dest).symlink(content.original);
     },
     genTemplate: function(file) {
       let f = file;
-      log(`${chalk.yellow(f.type)}`);
-      log(`${chalk.blue(f.dest)}`);
-      log(`${chalk.green(f.content)}`);
+      // log(`${chalk.yellow(f.type)}`);
+      // log(`${chalk.blue(f.dest)}`);
+      // log(`${chalk.green(f.content)}`);
+      File(f.dest).template(content.original, content.variables);
     }
   };
 };
