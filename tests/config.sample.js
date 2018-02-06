@@ -1,60 +1,30 @@
-const config = {
+let dirs = {
+  docs: "/path/to/library/docs",
+  tests: "/path/to/library/tests"
+};
+
+let library = {
   directory: "/path/to/library",
-  children: [
+  files: [
+    { type: "file", dest: `${dirs.docs}/README.md`, content: "#README" },
     {
-      directory: "/path/to/library/directory0",
-      children: [
-        { file: "file0A.ext", type: "plain", content: "Hello, file0A" },
-        { file: "file0B.ext", type: "plain", content: "Hello, file0B" },
-        {
-          directory: "directory1",
-          children: [
-            { file: "file1A.ext", type: "plain", content: "Hello, file1A" },
-            { file: "file1B.ext", type: "plain", content: "Hello, file1B" }
-          ]
-        },
-        {
-          directory: "directory2",
-          children: [
-            { file: "file2A.ext", type: "plain", content: "Hello, file2A" },
-            { file: "file2B.ext", type: "plain", content: "Hello, file2B" }
-          ]
-        }
-      ]
+      type: "symlink",
+      dest: `${dirs.docs}/file.ext`,
+      content: {
+        original: "/path/to/original/content/file.ext"
+      }
     },
     {
-      directory: "directory0z",
-      children: [
-        { file: "file0Az.ext", type: "plain", content: "Hello, file0Az" },
-        { file: "file0Bz.ext", type: "plain", content: "Hello, file0Bz" },
-        {
-          directory: "directory1z",
-          children: [
-            { file: "file1Az.ext", type: "plain", content: "Hello, file1Az" },
-            { file: "file1Bz.ext", type: "plain", content: "Hello, file1Bz" }
-          ]
-        },
-        {
-          directory: "directory2z",
-          children: [
-            { file: "file2Az.ext", type: "plain", content: "Hello, file2Az" },
-            { file: "file2Bz.ext", type: "plain", content: "Hello, file2Bz" }
-          ]
-        }
-      ]
+      type: "template",
+      dest: "/path/to/templates/sample.js",
+      content: {
+        original: "/path/to/original/content",
+        variables: { foo: "Bar" }
+      }
     }
   ]
 };
 
-/*
-==============================================================================
-Thoughts / Questions / Notes
-==============================================================================
-
-1. modified seems to be best bet... 
-2. How do I ensure that they've named the library ? ie. what happ
-
-*/
 module.exports = {
-  con: config
+  con: library
 };
