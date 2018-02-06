@@ -9,6 +9,9 @@ var Library = config => {
       let keys = Object.keys(config);
       let values = Object.values(config);
       let entries = Object.entries(config);
+      log(`Config type: ${chalk.magenta(typeof config)}`);
+      log(`Config is Array? ${chalk.magenta(Array.isArray(config))}`);
+      log(`Raw Config \n${chalk.yellow(JSON.stringify(config, null, 2))}`);
       log(`${chalk.bold("Keys")}: \n ${chalk.yellow(keys)} \n `);
       log(
         `${chalk.bold("Values")}: \n ${chalk.blue(
@@ -20,7 +23,10 @@ var Library = config => {
     has: function(obj, prop) {
       return obj.hasOwnProperty(prop);
     },
+    //TODO: Create test to ensure that config is the same across all iterations
     parse: function(c = config) {
+      log(`Config type: ${chalk.magenta(typeof config)}`);
+      log(`Config is Array? ${chalk.magenta(Array.isArray(config))}`);
       if (hardstop < 10) {
         log("hardstop ", hardstop);
         log(`inside parse`);
