@@ -19,6 +19,7 @@ var Library = config => {
     parse: function(c = config) {
       let propDir = c.hasOwnProperty("directory"); // => bool
       let propChild = c.hasOwnProperty("children");
+      log(`Children: ${JSON.stringify(c.children)}`);
       if (propDir || propChild) {
         log(`configuration has directory property: ${propDir}`);
         log(`configuration has children property: ${propChild}`);

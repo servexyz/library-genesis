@@ -1,79 +1,4 @@
-var templateVarC = { Foo: "Bar" };
-
-//Current
-const config_single = [
-  {
-    target: "/path/to/library/directory0",
-    children: [
-      { target: "file0A.ext", type: "plain", content: "Hello, file0A" },
-      { target: "file0B.ext", type: "plain", content: "Hello, file0B" },
-      {
-        target: "directory1",
-        children: [
-          { target: "file1A.ext", type: "plain", content: "Hello, file1A" },
-          { target: "file1B.ext", type: "plain", content: "Hello, file1B" }
-        ]
-      },
-      {
-        target: "directory2",
-        children: [
-          { target: "file2A.ext", type: "plain", content: "Hello, file2A" },
-          { target: "file2B.ext", type: "plain", content: "Hello, file2B" }
-        ]
-      }
-    ]
-  }
-];
-
-const config_double = {
-  target: "/path/to/library",
-  children: [
-    {
-      target: "/path/to/library/directory0",
-      children: [
-        { target: "file0A.ext", type: "plain", content: "Hello, file0A" },
-        { target: "file0B.ext", type: "plain", content: "Hello, file0B" },
-        {
-          target: "directory1",
-          children: [
-            { target: "file1A.ext", type: "plain", content: "Hello, file1A" },
-            { target: "file1B.ext", type: "plain", content: "Hello, file1B" }
-          ]
-        },
-        {
-          target: "directory2",
-          children: [
-            { target: "file2A.ext", type: "plain", content: "Hello, file2A" },
-            { target: "file2B.ext", type: "plain", content: "Hello, file2B" }
-          ]
-        }
-      ]
-    },
-    {
-      target: "/path/to/library/directory0",
-      children: [
-        { target: "file0A.ext", type: "plain", content: "Hello, file0A" },
-        { target: "file0B.ext", type: "plain", content: "Hello, file0B" },
-        {
-          target: "directory1",
-          children: [
-            { target: "file1A.ext", type: "plain", content: "Hello, file1A" },
-            { target: "file1B.ext", type: "plain", content: "Hello, file1B" }
-          ]
-        },
-        {
-          target: "directory2",
-          children: [
-            { target: "file2A.ext", type: "plain", content: "Hello, file2A" },
-            { target: "file2B.ext", type: "plain", content: "Hello, file2B" }
-          ]
-        }
-      ]
-    }
-  ]
-};
-
-const config_double_modified = {
+const config = {
   directory: "/path/to/library",
   children: [
     {
@@ -98,22 +23,22 @@ const config_double_modified = {
       ]
     },
     {
-      directory: "/path/to/library/directory0",
+      directory: "directory0z",
       children: [
-        { file: "file0A.ext", type: "plain", content: "Hello, file0A" },
-        { file: "file0B.ext", type: "plain", content: "Hello, file0B" },
+        { file: "file0Az.ext", type: "plain", content: "Hello, file0Az" },
+        { file: "file0Bz.ext", type: "plain", content: "Hello, file0Bz" },
         {
-          directory: "directory1",
+          directory: "directory1z",
           children: [
-            { file: "file1A.ext", type: "plain", content: "Hello, file1A" },
-            { file: "file1B.ext", type: "plain", content: "Hello, file1B" }
+            { file: "file1Az.ext", type: "plain", content: "Hello, file1Az" },
+            { file: "file1Bz.ext", type: "plain", content: "Hello, file1Bz" }
           ]
         },
         {
-          directory: "directory2",
+          directory: "directory2z",
           children: [
-            { file: "file2A.ext", type: "plain", content: "Hello, file2A" },
-            { file: "file2B.ext", type: "plain", content: "Hello, file2B" }
+            { file: "file2Az.ext", type: "plain", content: "Hello, file2Az" },
+            { file: "file2Bz.ext", type: "plain", content: "Hello, file2Bz" }
           ]
         }
       ]
@@ -131,7 +56,5 @@ Thoughts / Questions / Notes
 
 */
 module.exports = {
-  con: config_single,
-  con2: config_double,
-  con3: config_double_modified
+  con: config
 };

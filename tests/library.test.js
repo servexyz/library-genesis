@@ -1,5 +1,5 @@
 const log = console.log;
-const { con, con2, con3 } = require("./config.sample.js");
+const { con } = require("./config.sample.js");
 //This prints as expected, just obnoxious to see everytime
 test("Print config", () => {
   const { Library } = require("../src/library-reduce.js");
@@ -11,7 +11,7 @@ test(
   "Parse config",
   () => {
     const { Library } = require("../src/library-reduce.js");
-    Library(con3).parse();
+    Library(con).parse();
   },
   3000
 );
