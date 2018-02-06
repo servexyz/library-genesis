@@ -14,9 +14,13 @@
     "verbose": true,
     "bail": false,
     "collectCoverage": false,
-    "modulePathIgnorePatterns": ["node_modules", "api.test.js"]
+    "modulePathIgnorePatterns": [
+      "node_modules",
+      "api.test.js"
+    ]
   },
   "dependencies": {
-    "chalk": "^2.3.0"
+    "chalk": "^2.3.0",
+    "file-genesis": "^0.6.5"
   }
 }

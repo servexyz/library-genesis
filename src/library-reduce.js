@@ -1,5 +1,6 @@
 const log = console.log;
 const chalk = require("chalk");
+const { File } = requires("file-genesis");
 
 var Library = config => {
   return {
@@ -19,15 +20,38 @@ var Library = config => {
       );
       log(`${chalk.bold("Entries")}: \n ${chalk.green(entries)} \n `);
     },
-    parse: () => {
+    parse: function() {
       log(`config: ${JSON.stringify(config, null, 2)}`);
       let root = config.directory;
       log(`root: ${root}`);
       config.files.map(f => {
-        log(`${chalk.yellow(f.type)}`);
-        log(`${chalk.blue(f.dest)}`);
-        log(`${chalk.green(f.content)}`);
+        switch (f.type) {
+          case "file":
+            return this.genFile(f);
+          case "symlink":
+            return this.genSymlink(f);
+          case "template":
+            return this.genTemplate(f);
+        }
       });
+    },
+    genFile: function(file) {
+      let f = file;
+      log(`${chalk.yellow(f.type)}`);
+      log(`${chalk.blue(f.dest)}`);
+      log(`${chalk.green(f.content)}`);
+    },
+    genSymlink: function(file) {
+      let f = file;
+      log(`${chalk.yellow(f.type)}`);
+      log(`${chalk.blue(f.dest)}`);
+      log(`${chalk.green(f.content)}`);
+    },
+    genTemplate: function(file) {
+      let f = file;
+      log(`${chalk.yellow(f.type)}`);
+      log(`${chalk.blue(f.dest)}`);
+      log(`${chalk.green(f.content)}`);
     }
   };
 };
