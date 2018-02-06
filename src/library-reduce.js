@@ -1,6 +1,6 @@
 const log = console.log;
 const chalk = require("chalk");
-const { File } = requires("file-genesis");
+const { File } = require("file-genesis");
 
 var Library = config => {
   return {
