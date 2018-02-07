@@ -1,2 +1,4 @@
-const chalk = require("chalk");
-const log = console.log;
+const path = require("path");
+const { Library } = require(path.join(__dirname, "src/library.js"));
+
+module.exports = { Library };

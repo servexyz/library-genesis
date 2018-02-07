@@ -1,13 +1,11 @@
 const log = console.log;
 const chalk = require("chalk");
-// const { File } = require("file-genesis");
-const { File } = require("../../file-genesis/lib");
+const { File } = require("file-genesis");
 const path = require("path");
 
 var Library = config => {
   let root = config.directory;
   return {
-    //TODO: Create getType which returns "directory" or "file"
     printConfig: () => {
       let keys = Object.keys(config);
       let values = Object.values(config);
@@ -23,7 +21,7 @@ var Library = config => {
       );
       log(`${chalk.bold("Entries")}: \n ${chalk.green(entries)} \n `);
     },
-    parse: function() {
+    generate: function() {
       config.files.map(f => {
         switch (f.type) {
           case "file":
@@ -37,24 +35,14 @@ var Library = config => {
     },
     genFile: function(file) {
       let f = file;
-      log(`${chalk.yellow(f.type)}`);
-      log(`${chalk.blue(f.dest)}`);
-      log(`${chalk.green(f.content)}`);
       File(f.dest).plain(f.content);
     },
     genSymlink: function(file) {
       let f = file;
-      log(`${chalk.yellow(f.type)}`);
-      log(`${chalk.blue(f.dest)}`);
-      log(`${chalk.green(f.content.original)}`);
       File(f.dest).symlink(f.content.original);
     },
     genTemplate: function(file) {
       let f = file;
-      log(`${chalk.yellow(f.type)}`);
-      log(`${chalk.blue(f.dest)}`);
-      log(`${chalk.green(f.content)}`);
-      log(f.content.original);
       File(f.dest).template(f.content.original, f.content.variables);
     }
   };
