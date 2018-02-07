@@ -1,0 +1,1 @@
+/Users/alechp/Code/servexyz/library-genesis/tests/sandbox/templates/sample.template.js
