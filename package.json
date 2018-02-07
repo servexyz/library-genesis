@@ -1,6 +1,6 @@
 {
   "name": "library-genesis",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "main": "index.js",
   "repository": "https://github.com/servexyz/library-genesis",
   "license": "MIT",
@@ -14,7 +14,11 @@
     "verbose": true,
     "bail": false,
     "collectCoverage": false,
-    "modulePathIgnorePatterns": ["node_modules", "api.test.js", "sandbox"]
+    "modulePathIgnorePatterns": [
+      "node_modules",
+      "api.test.js",
+      "sandbox"
+    ]
   },
   "dependencies": {
     "chalk": "^2.3.0",
