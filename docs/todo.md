@@ -10,11 +10,11 @@
   * [x] `src` Spawn files
 
 * [x] `docs` Add docs section in readme
-* [ ] `docs` Add goal section in readme
+* [x] `docs` Add goal section in readme
 * [x] `test` Add .travis.yml config
-* [ ] `docs` Update keys section (outdated now)
-* [ ] `src` Remove cruft code
-* [ ] `src` Expose API
+* [x] `docs` Remove keys section (outdated now)
+* [x] `src` Remove cruft code
+* [x] `src` Expose API
 
   * [ ] `test` Create test for API
 
@@ -72,4 +72,4 @@ const config = {
 };
 ```
 
-Originally I tried doing this but I failed to find an elegant solution and gave up.
+Originally I tried doing this but I failed to find an elegant solution and gave up. What I like about this approach is that the directory nesting is implicit / visually declarative.
