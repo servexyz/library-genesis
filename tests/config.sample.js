@@ -3,24 +3,28 @@ let root = path.join(__dirname, "sandbox");
 
 let dirs = {
   d: "docs",
-  t: "templates"
+  t: "templates",
+  o: "output"
 };
 
 let library = {
   directory: root,
   files: [
-    { type: "file", dest: `${root}/${dirs.d}/README.md`, content: "#README" },
+    {
+      type: "file",
+      dest: `${root}/${dirs.o}/${dirs.d}/README.md`,
+      content: "#README"
+    },
     {
       type: "symlink",
-      dest: `${root}/file.ext`,
+      dest: `${root}/${dirs.o}/config.js`,
       content: {
-        original: `${root}/${dirs.d}/README.md`
-        // original: path.join(__dirname, "../README.md")
+        original: `${root}/${dirs.t}/sample.template.js`
       }
     },
     {
       type: "template",
-      dest: `${root}/comp.js`,
+      dest: `${root}/${dirs.o}/comp.js`,
       content: {
         original: `${root}/${dirs.t}/sample.template.js`,
         variables: { component: "Foobar" }

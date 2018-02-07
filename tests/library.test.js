@@ -10,7 +10,7 @@ const { con } = require("./config.sample.js");
 test(
   "Parse config",
   () => {
-    const { Library } = require("../src/library-reduce.js");
+    const { Library } = require("../src/library.js");
     Library(con).parse();
   },
   3000
