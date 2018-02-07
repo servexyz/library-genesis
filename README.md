@@ -1,38 +1,22 @@
 # Library-Genesis
 
-Convert config into library scaffolding
+> Convert config into library scaffolding
 
----
+[![Build Status](https://travis-ci.org/servexyz/library-genesis.svg?branch=master)](https://travis-ci.org/servexyz/library-genesis)
 
-### Getting Started
-
----
-
-**Install**
+## Install
 
 ```
 yarn add library-genesis
 ```
 
-**Summary**
-
-1. Create config and import it
-2. Import `{ Library }` from `library-genesis`
-3. Call `Library(config).parse()`
-
-**Code**
+## Use
 
 ```js
 const { myLibConfig } = require("./path/to/my-config.js");
 const { Library } = require("library-genesis");
 Library(myLibConfig).generate();
 ```
-
----
-
-### Config
-
----
 
 > [sample.config.js](./tests/config.sample.js)
 
@@ -72,7 +56,3 @@ Library(myLibConfig).generate();
 * `file-genesis`
 
   > [@github](https://github.com/servexyz/file-genesis) | [@npm](https://www.npmjs.com/package/file-genesis)
-
-```
-
-```
