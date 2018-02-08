@@ -20,7 +20,8 @@
 
 ## Icebox
 
-Eventually, I would like parser to work with a config that looks like this:
+* [ ] Add local/remote parsing to template source
+* [ ] Eventually, I would like parser to work with a config that looks like this:
 
 ```js
 const config = {
