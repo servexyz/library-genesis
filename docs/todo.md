@@ -16,11 +16,15 @@
 * [x] `src` Remove cruft code
 * [x] `src` Expose API
 
-  * [ ] `test` Create test for API
+  * [x] `test` Create test for API
+
+## v0.6.0
+
+* [ ] Add local/remote parsing to template source
+* [ ] Consider changing "file" in config to "plain" so that it matches file-generator
 
 ## Icebox
 
-* [ ] Add local/remote parsing to template source
 * [ ] Eventually, I would like parser to work with a config that looks like this:
 
 ```js
