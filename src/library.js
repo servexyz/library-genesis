@@ -4,7 +4,6 @@ const { File } = require("file-genesis");
 const path = require("path");
 
 var Library = config => {
-  let root = config.directory;
   return {
     printConfig: () => {
       let keys = Object.keys(config);
