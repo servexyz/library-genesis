@@ -49,6 +49,14 @@ Library(myLibConfig).generate();
 
 ---
 
+* `library-genesis-cli`
+
+  > [@github](https://github.com/servexyz/library-genesis-cli) | [@npm](https://www.npmjs.com/package/library-genesis-cli)
+
+* `library-genesis-example`
+
+  > [@github](https://github.com/servexyz/library-genesis-example)
+
 * `content-genesis`
 
   > [@github](https://github.com/servexyz/content-genesis) | [@npm](https://www.npmjs.com/package/content-genesis)
