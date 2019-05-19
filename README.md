@@ -1,4 +1,4 @@
-# Library-Genesis
+![logo](docs/images/logo/library-genesis@2x.png)
 
 > Convert config into library scaffolding
 
