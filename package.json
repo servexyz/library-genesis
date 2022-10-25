@@ -6,13 +6,13 @@
   "license": "MIT",
   "scripts": {
     "test": "ava",
-    "snyk-protect": "snyk protect",
+    "snyk-protect": "snyk-protect",
     "prepare": "npm run snyk-protect"
   },
   "dependencies": {
     "chalk": "^2.3.0",
     "file-genesis": "^0.6.5",
-    "snyk": "^1.193.1"
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
