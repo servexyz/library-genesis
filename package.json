@@ -12,7 +12,7 @@
   "dependencies": {
     "chalk": "^2.3.0",
     "file-genesis": "^0.6.5",
-    "snyk": "^1.193.1"
+    "snyk": "^1.685.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
